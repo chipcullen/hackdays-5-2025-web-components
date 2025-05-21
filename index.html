@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Playing with Web Components</title>
+  <script defer type="module" src="./app.js"></script>
+</head>
+<body>
+  <simple-header
+    color="orange"
+  >
+    this header and player are web components
+  </simple-header>
+  <hr />
+  <label>Slug:
+    <input
+      type="text"
+      placeholder="revolutionary-war-weapons-preview-x0y3hh"
+      style="width: 500px; margin-bottom: 20px;"
+
+    />
+  </label>
+  <pbs-player
+    slug="revolutionary-war-weapons-preview-x0y3hh"
+    color="magenta"
+  >
+  </pbs-player>
+
+  <h2 class="years-since">
+    I've been at PBS for <years-since date="2015-06-15"></years-since>
+    and Director of Web Technology for <years-since date="2019-06"></years-since>
+  </h2>
+</body>
+</html>
