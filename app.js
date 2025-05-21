@@ -1,3 +1,4 @@
+import "./popular-videos-selector.js";
 import "./pbs-player.js";
 import "./simple-header.js";
 import "./years-since.js";
