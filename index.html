@@ -5,6 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Playing with Web Components</title>
   <script defer type="module" src="./app.js"></script>
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      padding: 20px;
+    }
+  </style>
 </head>
 <body>
   <simple-header
@@ -17,9 +24,10 @@
     <input
       type="text"
       placeholder="revolutionary-war-weapons-preview-x0y3hh"
-      style="width: 500px; margin-bottom: 20px;"
+      style="width: 500px; margin-block:10px;"
     />
   </label>
+  <hr />
 
   <pbs-player
     slug="revolutionary-war-weapons-preview-x0y3hh"
@@ -31,9 +39,9 @@
   <popular-videos-selector></popular-videos-selector>
   <hr />
 
-  <h2 class="years-since">
+  <h2>
     I've been at PBS for <years-since date="2015-06-15"></years-since>,
-    and Director of Web Technology for <years-since date="2019-06"></years-since>
+    and Director of Web Technology for <years-since date="2019-06"></years-since>.
   </h2>
 </body>
 </html>

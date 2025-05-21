@@ -2,6 +2,20 @@
 
 Making a hack day project with web components
 
+## Things I've learned
+
+- Using direct `import` statements in JS works as long as you're using a server
+- Cloudfront (in front of CS) messes with CORS if you're not on the right port
+- How to use VS Code Live Server with a cert / https
+- Web Components
+  - Are good for leaf nodes - small bits of the front end.
+  - Are totally front end so no back end processing
+  - Are `class` based - which, yeah, not my fav
+  - Not a good replacement for Player and it's `iframe` because it needs some server power
+  - Updating a component both by direct manipulation of an attribute, or through a `CustomEvent`
+  - Must be defined with at least one hyphen - `<is-valid>` / `<isnotvalid>`
+- Styleable `<select>` elements!
+
 ## Prerequisites
 
 - `openssl` - `brew install openssl`

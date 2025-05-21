@@ -10,17 +10,28 @@ class YearsSince extends HTMLElement {
     const years = now.getFullYear() - date.getFullYear();
     const months = now.getMonth() - date.getMonth();
     const days = now.getDate() - date.getDate();
-    console.log({ years, months, days });
 
     let result = years;
+    let resultString = `${result} years`;
 
     switch (true) {
-      case months < 0 || (months === 0 && days < 0):
+      case (months < 0 && months > -3) || (months === 0 && days < 0):
+        resultString = `almost ${result} years`;
+        break;
+      case months <= -3 && months > -7:
         result--;
+        resultString = `${result} and a half years`;
+        break;
+      case months >= 5 && months < 9:
+        resultString = `${result} and a half years`;
+        break;
+      case months >= 9 && months <= 12:
+        result++;
+        resultString = `almost ${result} years`;
         break;
     }
 
-    this.shadowRoot.innerHTML = `<span>${result} years</span>`;
+    this.shadowRoot.innerHTML = `<span>${resultString}</span>`;
   }
 }
 

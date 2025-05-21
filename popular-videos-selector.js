@@ -2,7 +2,27 @@ import getPopularVideos from "./getPopularVideos.js";
 
 const template = document.createElement("template");
 template.innerHTML = `
-<style></style>
+<style>
+  select {
+  &, &::picker(select) {
+    appearance: base-select;
+    font-family: sans-serif;
+    max-width: 100vw;
+  }
+  option {
+    outline: 1px solid grey;
+    margin: 10px;
+    text-wrap: wrap;
+    max-width: 100vw;
+    border-radius: 5px;
+
+    &:focus, &:hover {
+      outline-width: 3px;
+      background-color: LightCyan;
+    }
+  }
+}
+</style>
 <div class="popular-videos-selector">
   <h2>Popular Videos</h2>
   <select></select>
@@ -29,10 +49,15 @@ class PopularVideosSelector extends HTMLElement {
         parent.show?.title ||
         parent?.title ||
         null;
-      option.textContent = `
-        ${index + 1}:
-        ${showTitle ? `${showTitle}: ` : ""}
-        ${video.title}
+
+      option.innerHTML = `
+          <img src="${video.images["asset-mezzanine-16x9"]}?resize=200x" alt="${
+        video.title
+      }" />
+          ${index + 1}:
+          ${showTitle ? `${showTitle}: ` : ""}
+          ${video.title}
+
       `;
       this.select.appendChild(option);
     });

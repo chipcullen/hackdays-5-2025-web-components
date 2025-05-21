@@ -7,7 +7,8 @@ template.innerHTML = `
   .player { border: 1px solid black; padding: 20px; margin-block: 20px;}
       video {
       aspect-ratio: 16 / 9;
-      border: 10px solid var(--border-color, orange);
+      border: 5px solid var(--border-color, orange);
+      border-radius: 5px;
       width: calc(100% - 20px);
       }
 </style>

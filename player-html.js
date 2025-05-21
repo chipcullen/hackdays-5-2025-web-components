@@ -1,6 +1,4 @@
 const playerHTML = (video) => {
-  console.log({ video });
-
   const { mp4_videos, hls_videos, title, parent, images, flags } = video;
 
   const hlsVideo = hls_videos[0].url;
@@ -28,8 +26,6 @@ const playerHTML = (video) => {
       ${title}
     </h3>
   `;
-
-  console.log({ showTitle });
 };
 
 export default playerHTML;
