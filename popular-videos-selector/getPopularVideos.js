@@ -1,7 +1,7 @@
-import csRequestHeaders from "./cs-headers.js";
+import csRequestHeaders from "/cs-headers.js";
 
-const getCSVideo = async (slug) => {
-  const url = `https://content.services.pbs.org/v3/pbsorg/screens/video-assets/${slug}/?station_id=92d89794-5ff0-4fe6-a443-cc888104e021`;
+const getPopularVideos = async () => {
+  const url = `https://content.services.pbs.org/v3/pbsorg/collections/most-popular-videos/`;
 
   // this is terrible don't actually do this
   const response = await fetch(url, {
@@ -15,7 +15,7 @@ const getCSVideo = async (slug) => {
   }
   const data = await response.json();
 
-  return data.resource;
+  return data.collections[0].content;
 };
 
-export default getCSVideo;
+export default getPopularVideos;

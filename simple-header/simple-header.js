@@ -1,5 +1,3 @@
-import counter from "./counter.js";
-
 const template = document.createElement("template");
 
 template.innerHTML = `
@@ -27,18 +25,12 @@ class SimpleHeader extends HTMLElement {
   }
 
   attributeChangedCallback(name, oldValue, newValue) {
-    // console.log(`Attribute ${name} changed from ${oldValue} to ${newValue}`);
     if (name === "color") {
       this.updateColor(newValue);
     }
   }
 
-  // connectedCallback() {
-  //   console.log("simple-header mounted");
-  // }
-
   updateColor(color) {
-    counter();
     if (color !== null) {
       this.shadowRoot.querySelector("h2").style.color = color;
     }
